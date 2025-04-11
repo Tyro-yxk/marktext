@@ -17,6 +17,8 @@ import { watchers } from '../utils/imagePathAutoComplement'
 import { WindowType } from '../windows/base'
 import EditorWindow from '../windows/editor'
 import SettingWindow from '../windows/setting'
+import { switchLanguage } from '../i18n/i18nUtil'
+import { marktext } from '../index'
 
 class App {
   /**
@@ -173,6 +175,10 @@ class App {
           // Need to set dark or light theme because we set `system` to get the current system theme.
           nativeTheme.themeSource = isDarkMode ? 'dark' : 'light'
         }
+      }
+      if (change.language) {
+        switchLanguage(change.language)
+        marktext._accessor.menu.updateAppMenu()
       }
     })
 

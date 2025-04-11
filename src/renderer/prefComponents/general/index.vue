@@ -103,7 +103,7 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Misc:</h6>
+        <h6 class="title">Misc: </h6>
       </template>
       <template #children>
         <cur-select
@@ -111,7 +111,7 @@
           :value="language"
           :options="languageOptions"
           :onChange="value => onSelectChange('language', value)"
-          :disable="true"
+          :disable="false"
         ></cur-select>
       </template>
     </compound>
@@ -133,6 +133,8 @@ import {
   fileSortByOptions,
   languageOptions
 } from './config'
+import store from '@/store'
+import { i18n } from '@/main'
 
 export default {
   components: {
@@ -164,6 +166,11 @@ export default {
       fileSortBy: state => state.preferences.fileSortBy,
       language: state => state.preferences.language
     }),
+    lxmtext: {
+      get: function () {
+        return store.state.language
+      }
+    },
     startUpAction: {
       get: function () {
         return this.$store.state.preferences.startUpAction
@@ -177,6 +184,18 @@ export default {
   methods: {
     onSelectChange (type, value) {
       this.$store.dispatch('SET_SINGLE_PREFERENCE', { type, value })
+      if (type === 'language') {
+        this.$i18n.locale = value
+        this.$store.state.language = value
+        this.$store.language = value
+        this.$store.state.preferences.language = value
+        this.$store.preferences.language = value
+        this.language = value
+        store.state.language = value
+        store.language = value
+        store.preferences.language = value
+        i18n.locale = value
+      }
     },
     selectDefaultDirectoryToOpen () {
       this.$store.dispatch('SELECT_DEFAULT_DIRECTORY_TO_OPEN')

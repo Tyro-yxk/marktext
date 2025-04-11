@@ -3,8 +3,8 @@ import VueElectron from 'vue-electron'
 import sourceMapSupport from 'source-map-support'
 import bootstrapRenderer from './bootstrap'
 import VueRouter from 'vue-router'
-import lang from 'element-ui/lib/locale/lang/en'
-import locale from 'element-ui/lib/locale'
+// import lang from 'element-ui/lib/locale/lang/en'
+// import locale from 'element-ui/lib/locale'
 import axios from './axios'
 import store from './store'
 import './assets/symbolIcon'
@@ -41,6 +41,11 @@ import { addElementStyle } from '@/util/theme'
 import './assets/styles/index.css'
 import './assets/styles/printService.css'
 
+// Add vue-i18n imports
+import VueI18n from 'vue-i18n'
+import enLocale from '../locales/en' // Your English translations
+import zhLocale from '../locales/zh' // Your Chinese translations (example)
+
 // -----------------------------------------------
 
 // Decode source map in production - must be registered first
@@ -59,8 +64,27 @@ addElementStyle()
 // Be careful when changing code before this line!
 
 // Configure Vue
-locale.use(lang)
+// locale.use(lang)
 
+// Initialize vue-i18n
+Vue.use(VueI18n)
+
+// Create i18n instance
+if (!store.state.language) {
+  store.state.language = 'en'
+}
+export const i18n = new VueI18n({
+  locale: store.state.language, // default locale
+  fallbackLocale: store.state.language, // fallback locale
+  messages: {
+    en: enLocale,
+    zh: zhLocale
+    // Add more languages as needed
+  },
+  silentTranslationWarn: process.env.NODE_ENV === 'production' // suppress warnings in production
+})
+// Make sure to use the i18n instance with Element UI
+// locale.i18n((key, value) => i18n.t(key, value))
 Vue.use(Dialog)
 Vue.use(Form)
 Vue.use(FormItem)
@@ -104,5 +128,6 @@ const router = new VueRouter({
 new Vue({
   store,
   router,
+  i18n,
   template: '<router-view class="view"></router-view>'
 }).$mount('#app')

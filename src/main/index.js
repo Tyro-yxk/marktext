@@ -9,7 +9,7 @@ import App from './app'
 import Accessor from './app/accessor'
 import setupEnvironment from './app/env'
 import { getLogLevel } from './utils'
-
+import { switchLanguage } from './i18n/i18nUtil'
 const initializeLogger = appEnvironment => {
   log.transports.console.level = process.env.NODE_ENV === 'development' ? 'info' : 'error'
   log.transports.rendererConsole = null
@@ -20,6 +20,8 @@ const initializeLogger = appEnvironment => {
 }
 
 // -----------------------------------------------
+// i18n处理
+switchLanguage('zh')
 
 // NOTE: We only support Linux, macOS and Windows but not BSD nor SunOS.
 if (!/^(darwin|win32|linux)$/i.test(process.platform)) {
@@ -80,5 +82,5 @@ log.transports.file.sync = false
 // Enable remote module
 remoteInitializeServer()
 
-const marktext = new App(accessor, args)
+export const marktext = new App(accessor, args)
 marktext.init()

@@ -1,4 +1,5 @@
 import { ENCODING_NAME_MAP } from 'common/encoding'
+import { i18n } from '@/main'
 
 export const tabSizeOptions = [{
   label: '1',
@@ -25,25 +26,25 @@ export const endOfLineOptions = [{
   value: 'lf'
 }]
 
-export const trimTrailingNewlineOptions = [{
-  label: 'Trim all trailing',
+export const trimTrailingNewlineOptions = () => [{
+  label: i18n.t('preferences.category.editor-option.trimTrailingNewlineOptions.trim-all-trailing'),
   value: 0
 }, {
-  label: 'Ensure exactly one trailing',
+  label: i18n.t('preferences.category.editor-option.trimTrailingNewlineOptions.ensure-exactly-one-trailing'),
   value: 1
 }, {
-  label: 'Preserve style of original document',
+  label: i18n.t('preferences.category.editor-option.trimTrailingNewlineOptions.preserve-style-of-original-document'),
   value: 2
 }, {
-  label: 'Do nothing',
+  label: i18n.t('preferences.category.editor-option.trimTrailingNewlineOptions.do-nothing'),
   value: 3
 }]
 
-export const textDirectionOptions = [{
-  label: 'Left to Right',
+export const textDirectionOptions = () => [{
+  label: i18n.t('preferences.category.editor-option.textDirectionOptions.ltr'),
   value: 'ltr'
 }, {
-  label: 'Right to Left',
+  label: i18n.t('preferences.category.editor-option.textDirectionOptions.rtl'),
   value: 'rtl'
 }]
 

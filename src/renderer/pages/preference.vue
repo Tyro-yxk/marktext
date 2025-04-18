@@ -34,7 +34,8 @@ export default {
   computed: {
     ...mapState({
       theme: state => state.preferences.theme,
-      titleBarStyle: state => state.preferences.titleBarStyle
+      titleBarStyle: state => state.preferences.titleBarStyle,
+      language: state => state.preferences.language
     }),
     showCustomTitleBar () {
       return this.titleBarStyle === 'custom' && !this.isOsx
@@ -45,6 +46,9 @@ export default {
       if (value !== oldValue) {
         addThemeStyle(value)
       }
+    },
+    language: function (value, oldValue) {
+      this.$i18n.locale = value
     }
   },
   created () {

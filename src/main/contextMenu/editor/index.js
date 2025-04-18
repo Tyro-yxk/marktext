@@ -12,8 +12,6 @@ import {
 } from './menuItems'
 import spellcheckMenuBuilder from './spellcheck'
 
-const CONTEXT_ITEMS = [INSERT_BEFORE, INSERT_AFTER, SEPARATOR, CUT, COPY, PASTE, SEPARATOR, COPY_AS_MARKDOWN, COPY_AS_HTML, PASTE_AS_PLAIN_TEXT]
-
 const isInsideEditor = params => {
   const { isEditable, editFlags, inputFieldType } = params
   // WORKAROUND for Electron#32102: `params.spellcheckEnabled` is always false. Try to detect the editor container via other information.
@@ -21,6 +19,8 @@ const isInsideEditor = params => {
 }
 
 export const showEditorContextMenu = (win, event, params, isSpellcheckerEnabled) => {
+  const CONTEXT_ITEMS = [INSERT_BEFORE(), INSERT_AFTER(), SEPARATOR, CUT(), COPY(), PASTE(), SEPARATOR, COPY_AS_MARKDOWN(), COPY_AS_HTML(), PASTE_AS_PLAIN_TEXT()]
+
   const { isEditable, hasImageContents, selectionText, editFlags, misspelledWord, dictionarySuggestions } = params
 
   // NOTE: We have to get the word suggestions from this event because `webFrame.getWordSuggestions` and
@@ -43,7 +43,7 @@ export const showEditorContextMenu = (win, event, params, isSpellcheckerEnabled)
       menu.append(new MenuItem(SEPARATOR))
     }
 
-    [CUT, COPY, COPY_AS_HTML, COPY_AS_MARKDOWN].forEach(item => {
+    [CUT(), COPY(), COPY_AS_HTML(), COPY_AS_MARKDOWN()].forEach(item => {
       item.enabled = canCopy
     })
     CONTEXT_ITEMS.forEach(item => {

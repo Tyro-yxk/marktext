@@ -44,7 +44,7 @@ import './assets/styles/printService.css'
 // Add vue-i18n imports
 import VueI18n from 'vue-i18n'
 import enLocale from '../locales/en' // Your English translations
-import zhLocale from '../locales/zh' // Your Chinese translations (example)
+import zhLocale from '../locales/zh'
 
 // -----------------------------------------------
 
@@ -70,12 +70,9 @@ addElementStyle()
 Vue.use(VueI18n)
 
 // Create i18n instance
-if (!store.state.language) {
-  store.state.language = 'en'
-}
 export const i18n = new VueI18n({
-  locale: store.state.language, // default locale
-  fallbackLocale: store.state.language, // fallback locale
+  locale: global.marktext.initialState.language, // default locale
+  fallbackLocale: global.marktext.initialState.language, // fallback locale
   messages: {
     en: enLocale,
     zh: zhLocale

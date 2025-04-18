@@ -26,6 +26,7 @@ const parseUrlArgs = () => {
   const userDataPath = params.get('udp')
   const windowId = Number(params.get('wid'))
   const type = params.get('type')
+  const language = params.get('language')
 
   if (Number.isNaN(windowId)) {
     throw new Error('Error while parsing URL arguments: windowId!')
@@ -41,7 +42,8 @@ const parseUrlArgs = () => {
       codeFontSize,
       hideScrollbar,
       theme,
-      titleBarStyle
+      titleBarStyle,
+      language
     }
   }
 }

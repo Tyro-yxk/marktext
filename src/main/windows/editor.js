@@ -60,7 +60,8 @@ class EditorWindow extends BaseWindow {
       tabBarVisibility,
       sourceCodeModeEnabled,
       spellcheckerEnabled,
-      spellcheckerLanguage
+      spellcheckerLanguage,
+      language
     } = preferences.getAll()
 
     // Enable native or custom/frameless window and titlebar

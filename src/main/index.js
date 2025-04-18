@@ -21,7 +21,6 @@ const initializeLogger = appEnvironment => {
 
 // -----------------------------------------------
 // i18n处理
-switchLanguage('zh')
 
 // NOTE: We only support Linux, macOS and Windows but not BSD nor SunOS.
 if (!/^(darwin|win32|linux)$/i.test(process.platform)) {
@@ -53,6 +52,7 @@ if (!process.mas && process.env.NODE_ENV !== 'development') {
 let accessor = null
 try {
   accessor = new Accessor(appEnvironment)
+  switchLanguage(accessor.preferences.getItem('language'))
 } catch (err) {
   // Catch errors that may come from invalid configuration files like settings.
   const msgHint = err.message.includes('Config schema violation')

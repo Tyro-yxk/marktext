@@ -119,7 +119,162 @@
     "help-follow-on-twitter": "在Twitter上关注我们",
     "help-license": "许可",
     "help-about": "关于 MarkText...",
-    "help-check-for-updates": "检查更新..."
+    "help-check-for-updates": "检查更新...",
+    "insert-paragraph-before": "在当前段落前插入",
+    "insert-paragraph-after": "在当前段落后插入"
   },
-  "preferences": "首选项"
+  "preferences": {
+    "preferences": "首选项",
+    "search": "搜索设置",
+    "general": "常规",
+    "select-folder": "选择文件夹",
+    "autosave": "自动保存",
+    "autosave-enable": "自动保存文档更改",
+    "auto-save-delay-after-edit": "编辑文档后，延迟一段时间再自动保存",
+    "window": "窗口",
+    "title-bar-style": "标题栏样式",
+    "requires-restart": "需要重启",
+    "title-bar-style-options": {
+      "custom": "自定义",
+      "native": "原生"
+    },
+    "hide-scrollbars": "隐藏滚动条",
+    "open-files-in-new-window": "在新窗口中打开文件",
+    "open-folders-in-new-window": "在新窗口中打开文件夹",
+    "zoom": "缩放比例",
+    "sidebar": "侧边栏",
+    "wrap-text-in-table-of-contents": "目录文字自动换行",
+    "sort-field-for-files-in-open-folders": "打开文件夹中文件的排序字段",
+    "action-on-startup": "启动时的操作",
+    "open-the-default-directory": "打开默认目录",
+    "open-a-blank-page": "打开空页面",
+    "misc": "其他",
+    "user-interface-language": "用户界面语言",
+    "category": {
+      "general": "总览",
+      "editor": "编辑器",
+      "markdown": "Markdown",
+      "spelling": "拼写",
+      "theme": "主题",
+      "image": "图像",
+      "keybindings": "快捷键绑定",
+      "editor-option": {
+        "title": "文本编辑器设置",
+        "fontSize": "字体大小",
+        "lineHeight": "行高",
+        "editorFontFamily": "字体",
+        "editorLineWidth": "文本编辑器的最大宽度",
+        "editorLineWidth-notes": "留空则使用主题默认值，否则需填写数字并加上单位后缀。可选单位包括：字符宽度（'ch'）、像素（'px'）或百分比（'%'）。",
+        "code-block-settings": "代码区块设置",
+        "codeBlockLineNumbers": "显示行号",
+        "trimUnnecessaryCodeBlockEmptyLines": "移除开头和结尾的空行",
+        "writing-behavior": "写作习惯",
+        "autoPairBracket": "输入时自动补全括号",
+        "autoPairMarkdownSyntax": "自动补全 Markdown 语法",
+        "autoPairQuote": "自动补全引号",
+        "file-representation": "文件表示形式",
+        "tabSizeOptions": "首选缩进宽度",
+        "endOfLine": "换行符类型",
+        "defaultEncoding": "默认编码",
+        "autoGuessEncoding": "自动检测文件编码",
+        "trimTrailingNewline": "尾部换行符处理",
+        "trimTrailingNewlineOptions": {
+          "trim-all-trailing": "修剪所有尾部",
+          "ensure-exactly-one-trailing": "确保末尾保留一个换行符",
+          "preserve-style-of-original-document": "保留原文档样式",
+          "do-nothing": "什么也不做"
+        },
+        "text-direction": "文本方向",
+        "hideQuickInsertHint": "关闭段落类型选择提示",
+        "hideLinkPopup": "鼠标悬停链接时隐藏弹窗",
+        "autoCheck": "自动检查",
+        "textDirectionOptions": {
+          "ltr": "从左到右",
+          "rtl": "从右到左"
+        }
+      },
+      "markdown-option": {
+        "lists": "列表",
+        "preferLooseListItem": "优先使用松散列表项",
+        "bulletListMarker": "无序列表标记符",
+        "orderListDelimiter": "有序列表分隔符",
+        "listIndentation": "列表缩进量",
+        "extensions": "拓展",
+        "frontmatterType": "前言部分格式",
+        "superSubScript": "启用Pandoc风格的上标和下标",
+        "footnote": "启用Pandoc风格的脚注",
+        "footnote-notes": "需要重启生效",
+        "compatibility": "兼容性",
+        "isHtmlEnabled": "启用HTML渲染",
+        "isGitlabCompatibilityEnabled": "启用GitLab兼容模式",
+        "diagrams": "图表",
+        "sequenceTheme": "时序图主题",
+        "sequenceThemeDescription": "时序图主题配置说明",
+        "preferHeadingStyle": "标题风格偏好"
+      },
+      "spelling-option":{
+        "spelling": "拼写",
+        "wordsInCustomDictionary": "没有可用的词语",
+        "spellcheckerEnabled": "启用拼写检查",
+        "spellcheckerNoUnderline": "隐藏拼写错误标记",
+        "automatically-detect-document-language": "自动检测文档语言",
+        "spellcheckerLanguage": "拼写检查默认语言",
+        "spellcheckerEnabled-description": "输入时将自动检测语言。可通过系统偏好设置的「语言与地区」添加更多语言。",
+        "custom-dictionary": "自定义词典",
+        "edit-words-in-custom-dictionary": "编辑自定义词典词条"
+      },"theme-option": {
+        "theme": "主题",
+        "autoSwitchTheme": "根据系统设置自动切换应用主题",
+        "open-the-themes-folder": "打开主题文件夹",
+        "open-folder": "打开文件夹",
+        "import-custom-themes": "导入自定义主题",
+        "import-theme": "导入主题"
+      },
+      "image-option": {
+        "image": "图片",
+        "default-action-after-an-image-is-inserted-from-local-folder-or-clipboard": "从本地文件夹或剪贴板插入图片后的默认操作",
+        "clipboard-handling-is-only-fully-supported-on-macOS-and-Windows": "剪贴板功能仅在macOS和Windows系统上获得完整支持",
+        "imageActions": {
+          "upload": "使用下方配置的上传器将图片上传至云端",
+          "folder": "复制图片到指定的相对资源目录或全局本地文件夹",
+          "path": "保留原始路径"
+        },
+        "global-or-relative-image-folder": "图片存储位置：全局/相对",
+        "global-image-folder": "全局图片存储目录",
+        "imagePreferRelativeDirectory": "默认使用相对资源路径",
+        "relativeDirectoryNamePlaceholder": "输入相对目录名（如：/images）",
+        "include": "包含",
+        "in-the-text-box-above-to-automatically-insert-the-document-file-name": "在文本框输入以上内容自动插入文件名",
+        "open": "打开",
+        "show-in-folder": "在文件夹中显示"
+      },
+      "key-bindings-option": {
+        "key-bindings": "快捷键设置",
+        "key-bindings-description": "自定义MarkText快捷键，点击下方保存按钮应用所有更改（需要重启）。\n所有可用和默认的快捷键绑定详情可见",
+        "online": "在线文档",
+        "description": "描述",
+        "key-Combination": "按键组合",
+        "options": "选项",
+        "save": "保存",
+        "restore": "恢复默认快捷键",
+        "debug-options": "调试选项",
+        "dumpKeyboardInformation": "导出键盘信息",
+        "edit": "编辑",
+        "reset": "重置",
+        "unbind": "取消绑定"
+      }
+
+    }
+  },
+  "general": "总览",
+  "words": "字数",
+  "characters": "字符数",
+  "paragraphs": "段落数",
+  "titleBarShortOption": {
+    "word": "词",
+    "character": "字符",
+    "paragraph": "段落",
+    "with-space-character": "字符（含空格）"
+  }
+
 }

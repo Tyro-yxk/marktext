@@ -78,7 +78,8 @@ export default {
       showTabBar: state => state.layout.showTabBar,
       sourceCode: state => state.preferences.sourceCode,
       theme: state => state.preferences.theme,
-      textDirection: state => state.preferences.textDirection
+      textDirection: state => state.preferences.textDirection,
+      language: state => state.preferences.language
     }),
     ...mapState({
       zoom: state => state.preferences.zoom
@@ -107,6 +108,9 @@ export default {
     },
     zoom: function (zoom) {
       ipcRenderer.emit('mt::window-zoom', null, zoom)
+    },
+    language: function (value, oldValue) {
+      this.$i18n.locale = value
     }
   },
   created () {

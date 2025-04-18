@@ -119,7 +119,163 @@
     "help-follow-on-twitter": "Follow us on Twitter...",
     "help-license": "License...",
     "help-about": "About MarkText...",
-    "help-check-for-updates": "Check for updates..."
+    "help-check-for-updates": "Check for updates...",
+    "insert-paragraph-before": "Insert Paragraph Before",
+    "insert-paragraph-after": "Insert Paragraph After"
+
   },
-  "preferences": "Preferences"
+  "preferences": {
+    "preferences": "Preferences",
+    "search": "Search preferences",
+    "general": "General",
+    "autosave": "Auto Save",
+    "select-folder": "Select Folder",
+    "autosave-enable": "Automatically save document changes",
+    "auto-save-delay-after-edit": "Delay following document edit before automatically saving",
+    "window": "Window",
+    "title-bar-style": "Title bar style",
+    "requires-restart": "Requires restart.",
+    "title-bar-style-options": {
+      "custom": "Custom",
+      "native": "Native"
+    },
+    "hide-scrollbars": "Hide scrollbars",
+    "open-files-in-new-window": "Open files in new window",
+    "open-folders-in-new-window": "Open folders in new window",
+    "zoom": "Zoom",
+    "sidebar": "Sidebar",
+    "wrap-text-in-table-of-contents": "Wrap text in table of contents",
+    "sort-field-for-files-in-open-folders": "Sort field for files in open folders",
+    "action-on-startup": "Action on startup",
+    "open-the-default-directory": "Open the default directory",
+    "open-a-blank-page": "Open a blank page",
+    "misc": "Misc",
+    "user-interface-language": "User interface language",
+    "category": {
+      "general": "General",
+      "editor": "Editor",
+      "markdown": "Markdown",
+      "spelling": "Spelling",
+      "theme": "Theme",
+      "image": "Image",
+      "keybindings": "Key Bindings",
+      "editor-option": {
+        "title": "Text editor settings",
+        "fontSize": "Font size",
+        "lineHeight": "Line height",
+        "editorFontFamily": "Font family",
+        "editorLineWidth": "Maximum width of text editor",
+        "editorLineWidth-notes": "Leave empty for theme default, otherwise use number with unit suffix, which is one of 'ch' for characters, 'px' for pixels, or '%' for percentage.",
+        "code-block-settings": "Code block settings",
+        "codeBlockLineNumbers": "Show line numbers",
+        "trimUnnecessaryCodeBlockEmptyLines": "Remove leading and trailing empty lines",
+        "writing-behavior": "Writing behavior",
+        "autoPairBracket": "Automatically close brackets when writing",
+        "autoPairMarkdownSyntax": "Automatically complete markdown syntax",
+        "autoPairQuote": "Automatically close quotation marks",
+        "file-representation": "File representation",
+        "tabSizeOptions": "Preferred tab width",
+        "endOfLine": "Line separator type",
+        "defaultEncoding": "Default encoding",
+        "autoGuessEncoding": "Automatically detect file encoding",
+        "trimTrailingNewline": "Handling of trailing newline characters",
+        "trimTrailingNewlineOptions": {
+          "trim-all-trailing": "Trim all trailing",
+          "ensure-exactly-one-trailing": "Trim all trailing",
+          "preserve-style-of-original-document": "Preserve style of original document",
+          "do-nothing": "Do nothing"
+        },
+        "text-direction": "Text direction",
+        "hideQuickInsertHint": "Hide hint for selecting type of new paragraph",
+        "hideLinkPopup": "Hide popup when cursor is over link",
+        "autoCheck": "Whether to automatically check any related tasks",
+        "textDirectionOptions": {
+          "ltr": "Left to Right",
+          "rtl": "Right to Left"
+        }
+      },
+      "markdown-option":{
+        "lists": "Lists",
+        "preferLooseListItem": "Prefer loose list items",
+        "bulletListMarker": "Preferred marker for bullet lists",
+        "orderListDelimiter": "Preferred marker for ordered lists",
+        "listIndentation": "Preferred list indentation",
+        "extensions": "extensions",
+        "frontmatterType": "Front matter format",
+        "superSubScript": "Enable Pandoc-style superscript and subscript",
+        "footnote": "Enable Pandoc-style footnotes",
+        "footnote-notes": "Requires restart.",
+        "compatibility": "Compatibility",
+        "isHtmlEnabled": "Enable HTML rendering",
+        "isGitlabCompatibilityEnabled": "Enable GitLab compatibility mode",
+        "diagrams": "Diagrams",
+        "sequenceTheme": "Sequence diagram theme",
+        "sequenceThemeDescription": "Sequence diagram theme",
+        "preferHeadingStyle": "Preferred heading style"
+      },
+      "spelling-option":{
+        "spelling": "Spelling",
+        "wordsInCustomDictionary": "No words available",
+        "spellcheckerEnabled": "Enable spell checking",
+        "spellcheckerNoUnderline": "Hide marks for spelling errors",
+        "automatically-detect-document-language": "Automatically detect document language",
+        "spellcheckerLanguage": "Default language for spell checking",
+        "spellcheckerEnabled-description": "The used language will be detected automatically while typing. Additional languages may be added through \"Language & Region\" in your system preferences pane.",
+        "custom-dictionary": "Custom dictionary",
+        "edit-words-in-custom-dictionary": "Edit words in custom dictionary"
+      },
+      "theme-option": {
+        "theme": "Theme",
+        "autoSwitchTheme": "Automatically adjust application theme according to system settings",
+        "open-the-themes-folder": "Open the themes folder",
+        "open-folder": "Open Folder",
+        "import-custom-themes": "Import custom themes",
+        "import-theme": "Import Theme"
+      },
+      "image-option": {
+        "image": "Image",
+        "default-action-after-an-image-is-inserted-from-local-folder-or-clipboard": "Default action after an image is inserted from local folder or clipboard",
+        "clipboard-handling-is-only-fully-supported-on-macOS-and-Windows": "Clipboard handling is only fully supported on macOS and Windows.",
+        "imageActions": {
+          "upload": "Upload image to cloud using selected uploader (must be configured below)",
+          "folder": "Copy image to designated relative assets or global local folder",
+          "path": "Keep original location"
+        },
+        "global-or-relative-image-folder": "Global or relative image folder",
+        "global-image-folder": "Global image folder",
+        "imagePreferRelativeDirectory": "Prefer relative assets folder",
+        "relativeDirectoryNamePlaceholder": "Relative image folder name",
+        "include": "Include",
+        "in-the-text-box-above-to-automatically-insert-the-document-file-name": " in the text-box above to automatically insert the document file name.",
+        "open": "Open",
+        "show-in-folder": "Show in Folder"
+      },
+      "key-bindings-option": {
+        "key-bindings": "Key Bindings",
+        "key-bindings-description": "Customize MarkText shortcuts and click on the save button below to apply all changes (requires a restart).\n        All available and default key binding can be found",
+        "online": "online",
+        "description": "Description",
+        "key-Combination": "Key Combination",
+        "options": "Options",
+        "save": "Save",
+        "restore": "Restore default key bindings",
+        "debug-options": "Debug options",
+        "dumpKeyboardInformation": "Dump keyboard information",
+        "edit": "Edit",
+        "reset": "Reset",
+        "unbind": "Unbind"
+      }
+
+    }
+  },
+  "general": "General",
+  "words": "Words",
+  "characters": "Characters",
+  "paragraphs": "Paragraphs",
+  "titleBarShortOption": {
+    "word": "W",
+    "character": "C",
+    "paragraph": "P",
+    "with-space-character": "A"
+  }
 }

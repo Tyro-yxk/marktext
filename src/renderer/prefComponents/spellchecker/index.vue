@@ -1,30 +1,30 @@
 <template>
   <div class="pref-spellchecker">
-    <h4>Spelling</h4>
+    <h4>{{$t('preferences.category.spelling-option.spelling')}}</h4>
     <compound>
       <template #head>
         <bool
-          description="Enable spell checking"
+          :description="$t('preferences.category.spelling-option.spellcheckerEnabled')"
           :bool="spellcheckerEnabled"
           :onChange="handleSpellcheckerEnabled"
         ></bool>
       </template>
       <template #children>
         <bool
-          description="Hide marks for spelling errors"
+          :description="$t('preferences.category.spelling-option.spellcheckerNoUnderline')"
           :bool="spellcheckerNoUnderline"
           :disable="!spellcheckerEnabled"
           :onChange="value => onSelectChange('spellcheckerNoUnderline', value)"
         ></bool>
         <bool
           v-show="isOsx"
-          description="Automatically detect document language"
+          :description="$t('preferences.category.spelling-option.automatically-detect-document-language')"
           :bool="true"
           :disable="true"
         ></bool>
         <cur-select
           v-show="!isOsx"
-          description="Default language for spell checking"
+          :description="$t('preferences.category.spelling-option.spellcheckerLanguage')"
           :value="spellcheckerLanguage"
           :options="availableDictionaries"
           :disable="!spellcheckerEnabled"
@@ -34,15 +34,16 @@
     </compound>
 
     <div v-if="isOsx && spellcheckerEnabled" class="description">
-      The used language will be detected automatically while typing. Additional languages may be added through "Language & Region" in your system preferences pane.
+      {{ $t('preferences.category.spelling-option.spellcheckerEnabled-description') }}
+<!--      The used language will be detected automatically while typing. Additional languages may be added through "Language & Region" in your system preferences pane.-->
     </div>
 
     <div v-if="!isOsx && spellcheckerEnabled">
-      <h6 class="title">Custom dictionary:</h6>
-      <div class="description">Edit words in custom dictionary.</div>
+      <h6 class="title">{{ $t('preferences.category.spelling-option.custom-dictionary') }}:</h6>
+      <div class="description">{{ $t('preferences.category.spelling-option.edit-words-in-custom-dictionary') }}.</div>
       <el-table
         :data="wordsInCustomDictionary"
-        empty-text="No words available"
+        :empty-text="$t('preferences.category.spelling-option.wordsInCustomDictionary')"
         style="width: 100%"
       >
         <el-table-column prop="word" label="Word">

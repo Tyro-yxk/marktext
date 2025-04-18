@@ -1,12 +1,12 @@
 <template>
   <div class="pref-sidebar">
-    <h3 class="title">{{$t('preferences')}}</h3>
+    <h3 class="title">{{$t('preferences.preferences')}}</h3>
     <section class="search-wrapper">
       <el-autocomplete
         popper-class="pref-autocomplete"
         v-model="state"
         :fetch-suggestions="querySearch"
-        placeholder="Search preferences"
+        :placeholder="$t('preferences.search')"
         :trigger-on-focus="false"
         @select="handleSelect">
         <i
@@ -35,15 +35,17 @@
 </template>
 <script>
 import { ipcRenderer } from 'electron'
-import { category, searchContent } from './config'
+import { getPreferenceCategories, searchContent } from './config'
+import { i18n } from '@/main'
 
 export default {
   data () {
-    this.category = category
+    // this.category = category
     return {
       currentCategory: 'general',
       restaurants: [],
-      state: ''
+      state: '',
+      category: getPreferenceCategories(i18n)
     }
   },
   watch: {

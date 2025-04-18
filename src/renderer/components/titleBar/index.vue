@@ -46,13 +46,13 @@
         >
           <div slot="content">
             <div class="title-item">
-              <span class="front">Words:</span><span class="text">{{wordCount['word']}}</span>
+              <span class="front">{{$t('words')}}:</span><span class="text">{{wordCount['word']}}</span>
             </div>
             <div class="title-item">
-              <span class="front">Characters:</span><span class="text">{{wordCount['character']}}</span>
+              <span class="front">{{$t('characters')}}:</span><span class="text">{{wordCount['character']}}</span>
             </div>
             <div class="title-item">
-              <span class="front">Paragraphs:</span><span class="text">{{wordCount['paragraph']}}</span>
+              <span class="front">{{$t('paragraphs')}}:</span><span class="text">{{wordCount['paragraph']}}</span>
             </div>
           </div>
           <div
@@ -104,25 +104,26 @@ import { mapState } from 'vuex'
 import { minimizePath, restorePath, maximizePath, closePath } from '../../assets/window-controls.js'
 import { PATH_SEPARATOR } from '../../config'
 import { isOsx } from '@/util'
+import { i18n } from '@/main'
 
 export default {
   data () {
     this.isOsx = isOsx
     this.HASH = {
       word: {
-        short: 'W',
+        short: i18n.t('titleBarShortOption.word'),
         full: 'word'
       },
       character: {
-        short: 'C',
+        short: i18n.t('titleBarShortOption.character'),
         full: 'character'
       },
       paragraph: {
-        short: 'P',
+        short: i18n.t('titleBarShortOption.paragraph'),
         full: 'paragraph'
       },
       all: {
-        short: 'A',
+        short: i18n.t('titleBarShortOption.with-space-character'),
         full: '(with space)character'
       }
     }

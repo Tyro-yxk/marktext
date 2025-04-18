@@ -7,6 +7,7 @@ import SpellIcon from '@/assets/icons/pref_spellcheck.svg'
 import KeyBindingIcon from '@/assets/icons/pref_key_binding.svg'
 
 import preferences from '../../../main/preferences/schema'
+// import { i18n } from '@/main'
 
 export const category = [{
   name: 'General',
@@ -57,3 +58,40 @@ export const searchContent = Object.keys(preferences).map(k => {
   }
 })
   .filter(({ category: ca }) => category.some(c => c.label === ca.toLowerCase()))
+
+export const getPreferenceCategories = (i18n) => [{
+  name: i18n.t('preferences.category.general'),
+  label: 'general',
+  icon: GeneralIcon,
+  path: '/preference/general'
+}, {
+  name: i18n.t('preferences.category.editor'),
+  label: 'editor',
+  icon: EditorIcon,
+  path: '/preference/editor'
+}, {
+  name: i18n.t('preferences.category.markdown'),
+  label: 'markdown',
+  icon: MarkdownIcon,
+  path: '/preference/markdown'
+}, {
+  name: i18n.t('preferences.category.spelling'),
+  label: 'spelling',
+  icon: SpellIcon,
+  path: '/preference/spelling'
+}, {
+  name: i18n.t('preferences.category.theme'),
+  label: 'theme',
+  icon: ThemeIcon,
+  path: '/preference/theme'
+}, {
+  name: i18n.t('preferences.category.image'),
+  label: 'image',
+  icon: ImageIcon,
+  path: '/preference/image'
+}, {
+  name: i18n.t('preferences.category.keybindings'),
+  label: 'keybindings',
+  icon: KeyBindingIcon,
+  path: '/preference/keybindings'
+}]

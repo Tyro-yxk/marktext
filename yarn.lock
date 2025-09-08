@@ -1655,35 +1655,6 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@intlify/core-base@11.1.3":
-  version "11.1.3"
-  resolved "https://registry.npmmirror.com/@intlify/core-base/-/core-base-11.1.3.tgz#8625126383334ef69262e0a99659db3e63bfc80c"
-  integrity sha512-cMuHunYO7LE80azTitcvEbs1KJmtd6g7I5pxlApV3Jo547zdO3h31/0uXpqHc+Y3RKt1wo2y68RGSx77Z1klyA==
-  dependencies:
-    "@intlify/message-compiler" "11.1.3"
-    "@intlify/shared" "11.1.3"
-
-"@intlify/core@^11.1.3":
-  version "11.1.3"
-  resolved "https://registry.npmmirror.com/@intlify/core/-/core-11.1.3.tgz#8060ad4f2ecea7e409eac8d2be744b16cae24e59"
-  integrity sha512-MDa8iYcq6Kzt2z7XstMIc/KyXEbXc60mTgWXNbwuHSzXoJJ8hzjXLeVd0XEJBfwl7rOKJ/pwkVwJ3tjlfOvfpQ==
-  dependencies:
-    "@intlify/core-base" "11.1.3"
-    "@intlify/shared" "11.1.3"
-
-"@intlify/message-compiler@11.1.3":
-  version "11.1.3"
-  resolved "https://registry.npmmirror.com/@intlify/message-compiler/-/message-compiler-11.1.3.tgz#61079227a263d01ab368c99ce26883e150cb4bdd"
-  integrity sha512-7rbqqpo2f5+tIcwZTAG/Ooy9C8NDVwfDkvSeDPWUPQW+Dyzfw2o9H103N5lKBxO7wxX9dgCDjQ8Umz73uYw3hw==
-  dependencies:
-    "@intlify/shared" "11.1.3"
-    source-map-js "^1.0.2"
-
-"@intlify/shared@11.1.3":
-  version "11.1.3"
-  resolved "https://registry.npmmirror.com/@intlify/shared/-/shared-11.1.3.tgz#1a4ed11a0efcaf95b56e0d01d0ee54d01bcd3019"
-  integrity sha512-pTFBgqa/99JRA2H1qfyqv97MKWJrYngXBA/I0elZcYxvJgcCw3mApAoPW3mJ7vx3j+Ti0FyKUFZ4hWxdjKaxvA==
-
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"

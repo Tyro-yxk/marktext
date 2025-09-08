@@ -219,20 +219,44 @@ export const uploadImage = async (pathname, image, preferences) => {
     if (size > MAX_SIZE) {
       notification()
     } else {
-      const reader = new FileReader()
-      reader.onload = async () => {
-        switch (currentUploader) {
-          case 'picgo':
-          case 'cliScript':
-            uploadByCommand(currentUploader, reader.result)
-            break
-          default:
-            uploadByGithub(reader.result, image.name)
-        }
-      }
+      // 修复剪贴板图片上传问题
+      if (currentUploader === 'picgo' || currentUploader === 'cliScript') {
+        // 对于 PicGo 和 CLI 脚本，需要先将图片数据写入临时文件
+        const tempPath = path.join(tmpdir(), `image-${Date.now()}-${image.name || 'clipboard-image'}`)
 
-      const readerFunction = currentUploader !== 'github' ? 'readAsArrayBuffer' : 'readAsDataURL'
-      reader[readerFunction](image)
+        const arrayBuffer = await new Promise((resolve, reject) => {
+          const reader = new FileReader()
+          reader.onload = () => resolve(reader.result)
+          reader.onerror = reject
+          reader.readAsArrayBuffer(image)
+        })
+
+        // 将 ArrayBuffer 写入临时文件
+        await fs.writeFile(tempPath, Buffer.from(arrayBuffer))
+
+        // 上传临时文件
+        uploadByCommand(currentUploader, tempPath)
+          .catch(err => rj(err))
+          .finally(async () => {
+            // 清理临时文件
+            try {
+              await fs.unlink(tempPath)
+            } catch (err) {
+              // 忽略删除失败
+            }
+          })
+      } else {
+        // GitHub 上传使用 base64 格式
+        const reader = new FileReader()
+        reader.onload = async () => {
+          const base64Data = reader.result.split(',')[1] // 移除 data:image/*;base64, 前缀
+          uploadByGithub(base64Data, image.name || 'clipboard-image')
+        }
+        reader.onerror = (err) => {
+          rj(err)
+        }
+        reader.readAsDataURL(image)
+      }
     }
   }
   return promise
